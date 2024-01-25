@@ -17,6 +17,7 @@ public class WebSecurityConfig {
         httpSecurity
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers("/").permitAll()
+                        .requestMatchers("/common/**").permitAll()
                         .anyRequest().authenticated()
                 ).formLogin(login -> login
                         .loginProcessingUrl("/login")
