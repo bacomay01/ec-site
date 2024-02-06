@@ -1,13 +1,18 @@
 package jp.ac.morijyobi.last_kadai.bean.form;
 
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 public class UserForm {
     @NotBlank
+    @Size(min = 5, max = 64)
     private String username;
     @NotBlank
+    @Size(min = 6, max = 64)
     private String password;
     @NotBlank
+    @Size(max = 255)
     private String name;
 
     public String getUsername() {
